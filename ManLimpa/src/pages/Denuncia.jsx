@@ -1,11 +1,9 @@
 import React from 'react';
+import Form_Denuncia from '../components/Form_Denuncia'; // Importa o componente do formulário de denúncia
 
 const Denuncia = () => {
   return (
-    <div>
-      <h1>Página Denuncia</h1>
-      <p>Conteúdo da página Coleta.</p>
-    </div>
+    <Form_Denuncia />
   );
 };
 
