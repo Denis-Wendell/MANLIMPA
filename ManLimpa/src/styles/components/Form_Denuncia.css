@@ -1,0 +1,131 @@
+/* denunciaForm.css */
+
+/* Cores principais */
+:root {
+  --cor-primaria: #f59e0b;
+  --cor-secundaria: #10b981;
+  --cor-texto: #333333;
+  --cor-borda: #d1d5db;
+  --cor-fundo: #f3f4f6;
+  --cor-branco: #ffffff;
+}
+
+/* Estilos do container principal */
+.denuncia-form-container {
+  border: 1px solid #000000;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.denuncia-header {
+  background-color: var(--cor-primaria);
+  height: 32px;
+  width: 100%;
+}
+
+.denuncia-content {
+  padding: 24px;
+}
+
+/* Título principal */
+.denuncia-titulo {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 24px;
+  color: var(--cor-texto);
+}
+
+/* Container do formulário */
+.formulario {
+  background-color: var(--cor-fundo);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+/* Seções do formulário */
+.secao-form {
+  margin-bottom: 24px;
+}
+
+.secao-titulo {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+/* Grid para campos */
+.campos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .campos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Grupo de campo individual */
+.campo-grupo {
+  margin-bottom: 16px;
+}
+
+.campo-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: var(--cor-texto);
+}
+
+.campo-input, 
+.campo-select, 
+.campo-textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.campo-input:focus, 
+.campo-select:focus, 
+.campo-textarea:focus {
+  outline: none;
+  border-color: var(--cor-secundaria);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+/* Área de descrição */
+.campo-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Botão de enviar */
+.botao-container {
+  text-align: center;
+}
+
+.botao-enviar {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+  font-weight: 500;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.botao-enviar:hover {
+  background-color: #e97f0e;
+}
+
+.botao-enviar:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.4);
+}

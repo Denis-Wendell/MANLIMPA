@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import "./styles/base/tailwind.css";
 
 // Importa componentes de layout
 import Header from './components/Header';
