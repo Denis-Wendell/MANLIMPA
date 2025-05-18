@@ -1,105 +1,85 @@
 /* denunciaForm.css */
 
-/* Cores principais */
-:root {
-  --cor-primaria: #f59e0b;
-  --cor-secundaria: #10b981;
-  --cor-texto: #333333;
-  --cor-borda: #d1d5db;
-  --cor-fundo: #f3f4f6;
-  --cor-branco: #ffffff;
-}
-
-/* Estilos do container principal */
-.denuncia-form-container {
-  border: 1px solid #000000;
+.formulario-container {
+  background-color: #ffffff;
+  max-width: 90%;
   margin: 0 auto;
-  max-width: 80%;
+  padding: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.denuncia-header {
-  background-color: var(--cor-primaria);
-  height: 32px;
+/* Barra laranja */
+.barra-laranja {
+  background-color: #f59e0b;
+  height: 8px;
   width: 100%;
-}
-
-.denuncia-content {
-  padding: 24px;
 }
 
 /* Título principal */
-.denuncia-titulo {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 24px;
-  color: var(--cor-texto);
+.titulo-container {
+  padding: 16px 24px;
 }
 
-/* Container do formulário */
-.formulario {
-  background-color: var(--cor-fundo);
-  border-radius: 8px;
-  padding: 24px;
-  margin-bottom: 24px;
-}
-
-/* Seções do formulário */
-.secao-form {
-  margin-bottom: 24px;
-}
-
-.secao-titulo {
+.titulo-principal {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: bold;
+  text-align: left;
+  margin: 0;
+  color: #333333;
+  text-transform: uppercase;
+}
+
+/* Formulário interno */
+.formulario-interno {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  margin: 0 24px 24px;
+  padding: 16px;
+}
+
+/* Títulos das seções */
+.secao-titulo {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #333333;
+}
+
+/* Layout dos campos */
+.campos-row {
+  display: flex;
+  flex-wrap: wrap;
   margin-bottom: 16px;
 }
 
-/* Grid para campos */
-.campos-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-}
-
-@media (min-width: 768px) {
-  .campos-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Grupo de campo individual */
 .campo-grupo {
+  flex: 1;
+  min-width: 200px;
+  padding: 0 10px;
   margin-bottom: 16px;
 }
 
+/* Labels */
 .campo-label {
   display: block;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: bold;
   margin-bottom: 4px;
-  color: var(--cor-texto);
+  color: #333333;
 }
 
+/* Inputs */
 .campo-input, 
-.campo-select, 
 .campo-textarea {
   width: 100%;
   padding: 8px;
-  border: 1px solid var(--cor-borda);
+  border: 1px solid #363636;
   border-radius: 4px;
+  background-color: #ffffff;
   font-size: 14px;
 }
 
-.campo-input:focus, 
-.campo-select:focus, 
-.campo-textarea:focus {
-  outline: none;
-  border-color: var(--cor-secundaria);
-  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
-}
-
-/* Área de descrição */
 .campo-textarea {
   resize: vertical;
   min-height: 100px;
@@ -108,24 +88,18 @@
 /* Botão de enviar */
 .botao-container {
   text-align: center;
+  margin: 20px 0;
+  padding-bottom: 20px;
 }
 
 .botao-enviar {
-  background-color: var(--cor-primaria);
-  color: var(--cor-branco);
+  background-color: #f59e0b;
+  color: #ffffff;
   font-weight: 500;
-  padding: 10px 24px;
+  padding: 8px 40px;
   border: none;
-  border-radius: 4px;
+  border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.3s;
-}
+  text-transform: uppercase;
 
-.botao-enviar:hover {
-  background-color: #e97f0e;
-}
-
-.botao-enviar:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.4);
 }
