@@ -2,7 +2,7 @@
 
 .formulario-container {
   background-color: #ffffff;
-  max-width: 90%;
+  max-width: 80%;
   margin: 0 auto;
   padding: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -88,7 +88,6 @@
 /* Botão de enviar */
 .botao-container {
   text-align: center;
-  margin: 20px 0;
   padding-bottom: 20px;
 }
 
@@ -103,3 +102,4 @@
   text-transform: uppercase;
 
 }
+

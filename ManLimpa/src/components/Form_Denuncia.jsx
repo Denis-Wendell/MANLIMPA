@@ -134,6 +134,7 @@ const DenunciaForm = () => {
           <button type="submit" className="botao-enviar">ENVIAR</button>
         </div>
       </form>
+       <br/>
     </div>
   );
 };
