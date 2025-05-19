@@ -1,11 +1,11 @@
 import React from 'react';
+import ImageCarousel from '../components/Home';
 
 const Home = () => {
   console.log('Home renderizou');
   return (
     <div>
-      <h1>Bem-vindo ao ManLimpa!</h1>
-      <p>Este é o conteúdo da página GESTAO DE RESISUOS.</p>
+      <ImageCarousel />
     </div>
   );
 };
