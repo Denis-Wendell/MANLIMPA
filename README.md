@@ -21,7 +21,7 @@ Antes de começar, você precisará ter instalado em sua máquina:
 ### Clonando o Repositório
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/manlimpa.git
+git clone https://github.com/Denis-Wendell/manlimpa.git
 
 # Entre no diretório do projeto
 cd manlimpa
