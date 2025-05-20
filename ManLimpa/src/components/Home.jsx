@@ -111,7 +111,9 @@ const ImageCarousel = () => {
     </p>
   </div>
 </div>
-  <p style={{ textAlign: "center", margin: "20px 0", fontSize: "18px", fontWeight: "bold" }}>Mapa de Ecopontos</p>
+
+<p style={{ textAlign: "center", margin: "20px 0", fontSize: "18px", fontWeight: "bold" }}>Mapa de Ecopontos</p>
+
   {/* Mapa de Localização */}
 
   <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
@@ -132,3 +134,4 @@ const ImageCarousel = () => {
 };
 
 export default ImageCarousel;
+
