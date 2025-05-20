@@ -7,6 +7,7 @@ const Home = () => {
     <div>
       <br />
       <ImageCarousel />
+      
     </div>
   );
 };

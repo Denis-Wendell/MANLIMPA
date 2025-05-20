@@ -73,46 +73,72 @@ const ImageCarousel = () => {
     display: "flex",
     justifyContent: "center",
     gap: "200px",
-    marginTop: "20px",
+    marginTop: "5px",
     flexWrap: "wrap",
-    padding: "10px 10px 0",
+    padding: "10px 0 10px 10px",
     backgroundColor: "#2e2e2e",
     borderRadius: "10px",
     color: "white",
   }}
 >
   {/* Componente de Informações */}
-  
-  <div style={{ textAlign: "left", minWidth: "180px" }}>
-   <a href="../pages/coleta">Ecopontos</a>
+
+  <div style={{ textAlign: "left", minWidth: "100px" }}>
+    <a href="../pages/coleta">Ecopontos</a>
     <p style={{ margin: "10px 0", fontSize: "14px" }}>
       Encontre pontos de coleta
     </p>
   </div>
 
-  <div style={{ textAlign: "left", minWidth: "180px" }}>
+  <div style={{ textAlign: "left", minWidth: "10px" }}>
     <a href="../pages/denuncia">Central de Denúncias</a>
-    <p style={{ margin: "10px 0", fontSize: "14px" }}>
+    <p style={{ margin: "5px 0", fontSize: "14px" }}>
       Realize denúncias de descarte indevidos
     </p>
   </div>
 
   <div style={{ textAlign: "left", minWidth: "180px" }}>
     <a href="../pages/conscientizacao">Conscientização</a>
-    <p style={{ margin: "10px 0", fontSize: "14px" }}>
+    <p style={{ margin: "5px 0", fontSize: "14px" }}>
       Saiba como e onde descartar seu lixo
     </p>
   </div>
 
   <div style={{ textAlign: "left", minWidth: "180px" }}>
     <a href="../pages/residuos">Resíduos</a>
-    <p style={{ margin: "10px 0", fontSize: "14px" }}>
+    <p style={{ margin: "5px 0", fontSize: "14px" }}>
       Conheça o que pode ou não ser lixo
     </p>
   </div>
 </div>
 <br /><br /><br /><br />
 {/* Componente de Impacto Ambiental */}
+
+  <div
+  style={{
+    marginTop: "20px",
+    padding: "20px",
+    backgroundColor: "#2e2e2e",
+    borderRadius: "10px",
+    color: "white",
+    textAlign: "center",
+  }}
+>
+  <h2 style={{ fontSize: "30px", marginBottom: "1px", fontWeight: "bold" }}>
+    Impacto Positivo em Manaus 🌱
+  </h2>
+  <br />
+  <p style={{ fontSize: "16px", marginBottom: "10px" }}>
+    ♻️ Mais de <strong>1.200 toneladas</strong> de resíduos recicláveis coletados em 2024
+  </p>
+  <p style={{ fontSize: "16px", marginBottom: "10px" }}>
+    🌍 Redução estimada de <strong>3.500 toneladas de CO₂</strong> na atmosfera
+  </p>
+  <p style={{ fontSize: "16px", marginBottom: "10px" }}>
+    ♻️ Mais de <strong>1.000 toneladas</strong> de resíduos recicláveis coletados em 2023
+    💚 Mais de <strong>200 ecopontos</strong> ativos ajudando a construir uma cidade mais sustentável!
+  </p>
+</div>
 
     </div>
   );
