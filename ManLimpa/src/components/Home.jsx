@@ -111,7 +111,7 @@ const ImageCarousel = () => {
     </p>
   </div>
 </div>
-
+<br /><br /><br /><br />
 {/* Componente de Impacto Ambiental */}
 
     </div>

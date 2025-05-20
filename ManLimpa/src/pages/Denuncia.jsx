@@ -3,7 +3,13 @@ import Form_Denuncia from '../components/Form_Denuncia'; // Importa o componente
 
 const Denuncia = () => {
   return (
+    <div>
+      <br />
     <Form_Denuncia />
+    <br />
+    <br />
+    <br />
+    </div>
   );
 };
 

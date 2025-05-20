@@ -1,12 +1,13 @@
 import React from 'react';
+import EducacaoContent from '../components/EducacaoComponents';
+
 
 const Educacao = () => {
   return (
-    <div>
-      <h1>Página Educação</h1>
-      <p>Conteúdo da página educação.</p>
+    <div className="educacao-container">  
+      <EducacaoContent />
     </div>
   );
 };
 
-export default Educacao;  // <- Exportação default obrigatória
+export default Educacao;

@@ -5,6 +5,7 @@ const Home = () => {
   console.log('Home renderizou');
   return (
     <div>
+      <br />
       <ImageCarousel />
     </div>
   );
