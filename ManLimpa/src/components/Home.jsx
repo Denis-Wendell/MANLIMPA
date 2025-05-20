@@ -85,7 +85,7 @@ const ImageCarousel = () => {
 
   <div style={{ textAlign: "left", minWidth: "100px" }}>
     <a href="../pages/coleta">Ecopontos</a>
-    <p style={{ margin: "5px 0", fontSize: "14px" }}>
+    <p style={{ margin: "10px 0", fontSize: "14px" }}>
       Encontre pontos de coleta
     </p>
   </div>
