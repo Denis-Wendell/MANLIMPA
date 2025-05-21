@@ -73,7 +73,7 @@ const ImageCarousel = () => {
   style={{
     display: "flex",
     justifyContent: "center",
-    gap: "200px",
+    gap: "180px",
     marginTop: "5px",
     flexWrap: "wrap",
     padding: "10px 0 10px 10px",

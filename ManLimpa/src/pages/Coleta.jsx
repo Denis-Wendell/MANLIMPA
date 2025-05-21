@@ -1,11 +1,14 @@
 import React from 'react';
+import Locais_Coleta from '../components/Locais_Coleta';
 
 const Coleta = () => {
   return (
     <div>
-      <h1>Página Coleta</h1>
-      <p>Conteúdo da página Coleta.</p>
+      <br />
+      <Locais_Coleta/>
+      <br />
     </div>
+    
   );
 };
 
