@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
 const images = [
   "/assets/1.png",
@@ -84,34 +85,28 @@ const ImageCarousel = () => {
   {/* Componente de Informações */}
 
   <div style={{ textAlign: "left", minWidth: "100px" }}>
-    <a href="../pages/coleta">Ecopontos</a>
+    <Link to="/coleta">ECOPONTOS</Link>
     <p style={{ margin: "10px 0", fontSize: "14px" }}>
       Encontre pontos de coleta
     </p>
   </div>
 
   <div style={{ textAlign: "left", minWidth: "10px" }}>
-    <a href="../pages/denuncia">Central de Denúncias</a>
+     <Link to="/denuncia">Denúncias</Link>
     <p style={{ margin: "5px 0", fontSize: "14px" }}>
       Realize denúncias de descarte indevidos
     </p>
   </div>
 
   <div style={{ textAlign: "left", minWidth: "180px" }}>
-    <a href="../pages/conscientizacao">Conscientização</a>
+    <Link to="/educacao">Concientização</Link>
     <p style={{ margin: "5px 0", fontSize: "14px" }}>
       Saiba como e onde descartar seu lixo
     </p>
   </div>
 
-  <div style={{ textAlign: "left", minWidth: "180px" }}>
-    <a href="../pages/residuos">Resíduos</a>
-    <p style={{ margin: "5px 0", fontSize: "14px" }}>
-      Conheça o que pode ou não ser lixo
-    </p>
-  </div>
 </div>
-<br /><br /><br /><br />
+
 {/* Componente de Impacto Ambiental */}
 
   <div
@@ -139,7 +134,7 @@ const ImageCarousel = () => {
     💚 Mais de <strong>200 ecopontos</strong> ativos ajudando a construir uma cidade mais sustentável!
   </p>
 </div>
-
+<br />
     </div>
   );
 };
