@@ -46,14 +46,20 @@ const DenunciaForm = () => {
           <div className="campos-row">
             <div className="campo-grupo">
               <label className="campo-label">Zona:</label>
-              <input
-                type="text"
-                name="zona"
-                value={formData.zona}
-                onChange={handleChange}
-                className="campo-input"
-                required
-              />
+               <select
+                  name="zona"
+                  value={formData.zona}
+                  onChange={handleChange}
+                  className="campo-input"
+                  required >
+                  <option value="">Selecione uma zona</option>
+                  <option value="Norte">Norte</option>
+                  <option value="Sul">Sul</option>
+                  <option value="Leste">Leste</option>
+                  <option value="Oeste">Oeste</option>
+                  <option value="Centro">Centro</option>
+              </select>
+
             </div>
             <div className="campo-grupo">
               <label className="campo-label">Bairro:</label>
@@ -64,6 +70,7 @@ const DenunciaForm = () => {
                 onChange={handleChange}
                 className="campo-input"
                 required
+                placeholder='Ex: Centro, Flores, etc.'
               />
             </div>
             <div className="campo-grupo">
@@ -75,6 +82,7 @@ const DenunciaForm = () => {
                 onChange={handleChange}
                 className="campo-input"
                 required
+                placeholder='Ex: Rua das Flores, Av. Brasil, etc.'
               />
             </div>
           </div>
@@ -84,14 +92,23 @@ const DenunciaForm = () => {
           <div className="campos-row">
             <div className="campo-grupo">
               <label className="campo-label">Tipo de resíduo:</label>
-              <input
+              <select
                 type="text"
                 name="tipoResiduo"
                 value={formData.tipoResiduo}
                 onChange={handleChange}
                 className="campo-input"
                 required
-              />
+              >
+                <option value="">Selecione um tipo de resíduo</option>
+                <option value="Resíduos Domiciliares">Resíduos Domiciliares: Provenientes de residências (restos de alimentos, papéis, plásticos, etc.</option>  
+                <option value="Resíduos de Limpeza Urbana">Resíduos de Limpeza Urbana: Gerados pela limpeza de ruas, praças e logradouros. </option>  
+                <option value="Resíduos Industriais">Resíduos Industriais: Resultantes de atividades industriais, como resíduos de processos de fabricação. </option>  
+                <option value="Resíduos de Serviços de Saúde (RSS)">Resíduos de Serviços de Saúde (RSS): Gerados em hospitais, clínicas, etc. (agulhas, luvas, etc.). </option>  
+                <option value="Resíduos de Construção Civil">Resíduos de Construção Civil: Entulho, materiais de demolição, etc. </option>  
+                <option value="Resíduos Radioativos">Resíduos Radioativos: Provenientes de fontes radioativas, como urânio. </option>  
+                <option value="Resíduos Agrícolas">Resíduos Agrícolas: Provenientes de atividades agrícolas, como restos de colheita. </option>  
+              </select>
             </div>
             <div className="campo-grupo">
               <label className="campo-label">Quantidade:</label>
@@ -102,6 +119,7 @@ const DenunciaForm = () => {
                 onChange={handleChange}
                 className="campo-input"
                 required
+                placeholder='Ex: 2kg, 3 sacos, etc.'
               />
             </div>
             <div className="campo-grupo">
@@ -125,6 +143,7 @@ const DenunciaForm = () => {
               rows={4}
               className="campo-textarea"
               required
+              placeholder='Descreva a situação, incluindo detalhes como horário, frequência, etc.'
             ></textarea>
           </div>
         </div>
