@@ -1,29 +1,107 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import denunciaService from '../services/denunciaService';
+import tipoResiduoService from '../services/tipoResiduoService';
 import "../styles/components/Form_Denuncia.css";
 
-const DenunciaForm = () => {
+const Form_Denuncia = () => {
   const [formData, setFormData] = useState({
     zona: '',
     bairro: '',
     rua: '',
-    tipoResiduo: '',
+    tipo_residuo: '',
     quantidade: '',
     descricao: '',
-    anexo: null
+    anexo_path: ''
   });
+
+  const [tiposResiduo, setTiposResiduo] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [mensagem, setMensagem] = useState({ texto: '', tipo: '' });
+
+  // Carregar tipos de resíduo ao montar o componente
+  useEffect(() => {
+    const carregarTiposResiduo = async () => {
+      try {
+        const tipos = await tipoResiduoService.getAllTiposResiduo();
+        setTiposResiduo(tipos);
+      } catch (error) {
+        console.error('Erro ao carregar tipos de resíduo:', error);
+        // Se falhar ao carregar da API, usamos os dados estáticos
+        setTiposResiduo([
+          { id: 1, nome: 'Resíduos Domiciliares', descricao: 'Provenientes de residências (restos de alimentos, papéis, plásticos, etc.)' },
+          { id: 2, nome: 'Resíduos de Limpeza Urbana', descricao: 'Gerados pela limpeza de ruas, praças e logradouros' },
+          { id: 3, nome: 'Resíduos Industriais', descricao: 'Resultantes de atividades industriais, como resíduos de processos de fabricação' },
+          { id: 4, nome: 'Resíduos de Serviços de Saúde (RSS)', descricao: 'Gerados em hospitais, clínicas, etc. (agulhas, luvas, etc.)' },
+          { id: 5, nome: 'Resíduos de Construção Civil', descricao: 'Entulho, materiais de demolição, etc.' },
+          { id: 6, nome: 'Resíduos Radioativos', descricao: 'Provenientes de fontes radioativas, como urânio' },
+          { id: 7, nome: 'Resíduos Agrícolas', descricao: 'Provenientes de atividades agrícolas, como restos de colheita' }
+        ]);
+      }
+    };
+
+    carregarTiposResiduo();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: files ? files[0] : value
+      [name]: files ? files[0] : value,
+      anexo_path: name === 'anexo' && files ? files[0].name : formData.anexo_path
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Dados do formulário:', formData);
-    alert('Denúncia enviada com sucesso!');
+    setIsLoading(true);
+    
+    try {
+      // Adaptar o objeto para o formato esperado pelo backend
+      const dadosParaEnviar = {
+        zona: formData.zona,
+        bairro: formData.bairro,
+        rua: formData.rua,
+        tipo_residuo: formData.tipo_residuo,
+        quantidade: formData.quantidade,
+        descricao: formData.descricao,
+        anexo_path: formData.anexo_path
+      };
+      
+      // Enviar os dados para a API
+      await denunciaService.createDenuncia(dadosParaEnviar);
+      
+      // Mostrar mensagem de sucesso
+      setMensagem({
+        texto: 'Denúncia enviada com sucesso! Agradecemos sua contribuição para uma cidade mais limpa.',
+        tipo: 'sucesso'
+      });
+      
+      // Limpar o formulário
+      setFormData({
+        zona: '',
+        bairro: '',
+        rua: '',
+        tipo_residuo: '',
+        quantidade: '',
+        descricao: '',
+        anexo_path: ''
+      });
+      
+      // Exibir alerta
+      alert('Denúncia enviada com sucesso!');
+    } catch (error) {
+      console.error('Erro ao enviar denúncia:', error);
+      
+      // Mostrar mensagem de erro
+      setMensagem({
+        texto: `Erro ao enviar denúncia: ${error.message}`,
+        tipo: 'erro'
+      });
+      
+      alert('Erro ao enviar denúncia. Por favor, tente novamente.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -37,6 +115,13 @@ const DenunciaForm = () => {
           DENÚNCIAS: INFORME IRREGULARIDADES DE DESCARTE INDEVIDO DE RESÍDUOS
         </h2>
       </div>
+
+      {/* Mensagem de status, se houver */}
+      {mensagem.texto && (
+        <div className={`mensagem ${mensagem.tipo}`}>
+          {mensagem.texto}
+        </div>
+      )}
 
       {/* Formulário */}
       <form onSubmit={handleSubmit}>
@@ -59,7 +144,6 @@ const DenunciaForm = () => {
                   <option value="Oeste">Oeste</option>
                   <option value="Centro">Centro</option>
               </select>
-
             </div>
             <div className="campo-grupo">
               <label className="campo-label">Bairro:</label>
@@ -93,9 +177,8 @@ const DenunciaForm = () => {
             <div className="campo-grupo">
               <label className="campo-label">Tipo de resíduo:</label>
               <select
-                type="text"
-                name="tipoResiduo"
-                value={formData.tipoResiduo}
+                name="tipo_residuo"
+                value={formData.tipo_residuo}
                 onChange={handleChange}
                 className="campo-input"
                 required
@@ -150,12 +233,18 @@ const DenunciaForm = () => {
 
         {/* Botão de enviar */}
         <div className="botao-container">
-          <button type="submit" className="botao-enviar">ENVIAR</button>
+          <button 
+            type="submit" 
+            className="botao-enviar"
+            disabled={isLoading}
+          >
+            {isLoading ? 'ENVIANDO...' : 'ENVIAR'}
+          </button>
         </div>
       </form>
-       <br/>
+      <br/>
     </div>
   );
 };
 
-export default DenunciaForm;
+export default Form_Denuncia;

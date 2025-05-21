@@ -33,22 +33,16 @@ const Locais_Coleta = () => {
       <div className="secao-texto">
         <h2>Pontos de Coleta Seletiva em Manaus</h2>
         <p className="texto-introducao">
-          Manaus possui diversos pontos de coleta seletiva espalhados pela cidade. 
-          Esses locais são fundamentais para o correto descarte de materiais recicláveis, 
-          contribuindo para a preservação ambiental da nossa região amazônica.
+        Manaus possui diversos pontos de coleta seletiva espalhados pela cidade. Esses locais são fundamentais para o correto descarte de materiais recicláveis, contribuindo para a preservação ambiental da nossa região amazônica.
         </p>
-        <p className="texto-introducao">
-          No mapa ao lado, você pode visualizar os principais pontos de coleta seletiva 
-          disponíveis em Manaus. Clique nos marcadores para obter mais informações sobre 
-          cada ponto e como chegar até eles.
-        </p>
+       
         <div className="info-dicas">
           <h3>Dicas de Reciclagem:</h3>
           <ul>
-            <li>Separe corretamente os materiais recicláveis</li>
-            <li>Lave as embalagens antes de descartar</li>
-            <li>Compacte garrafas e caixas para ocupar menos espaço</li>
-            <li>Verifique quais materiais são aceitos em cada ponto de coleta</li>
+            <li>• Separe corretamente os materiais recicláveis</li>
+            <li>• Lave as embalagens antes de descartar</li>
+            <li>• Compacte garrafas e caixas para ocupar menos espaço</li>
+            <li>• Verifique quais materiais são aceitos em cada ponto de coleta</li>
           </ul>
      
           <h3>Pontos de Coleta:</h3>

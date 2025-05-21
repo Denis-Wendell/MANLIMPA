@@ -9,7 +9,7 @@ const Footer = () => {
         <strong>Gestão de resíduos em Manaus:</strong> Descubra como a cidade está trabalhando para um futuro mais sustentável!
       </div>
       <div className="social-icons">
-        <p>redes sociais:</p>
+        <p>Redes Sociais:</p>
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
           <img src="/assets/instagram.png" alt="Instagram" />
         </a>

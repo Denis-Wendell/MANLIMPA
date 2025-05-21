@@ -13,7 +13,14 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <Link to="/">LOGO - MANLIMPA</Link>
+        <img 
+          src="/logo.png" 
+          alt="Logo do site" 
+          className="logo-image"
+          onError={(e) => {
+            e.target.src = "../../assets/logo.png"; // Caminho alternativo para a imagem
+          }} />
+        
       </div>
       
       {/* Botão do menu mobile */}
