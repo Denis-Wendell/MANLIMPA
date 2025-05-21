@@ -1,23 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Para navegação sem recarregar a página
-import '../styles/components/footer.css'; // Seu CSS customizado
-
+import { Link } from 'react-router-dom';
+import '../styles/components/footer.css';
 
 const Footer = () => {
   return (
     <footer>
-      <div className="text-sm">
+      <div className="footer-text">
         <strong>Gestão de resíduos em Manaus:</strong> Descubra como a cidade está trabalhando para um futuro mais sustentável!
       </div>
-      <div className="flex">
+      <div className="social-icons">
+        <p>redes sociais:</p>
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/instagram.png" alt="Instagram" className="" />
+          <img src="/assets/instagram.png" alt="Instagram" />
         </a>
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/facebook.png" alt="Facebook" className="" />
+          <img src="/assets/facebook.png" alt="Facebook" />
         </a>
         <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/youtube.png" alt="YouTube" className="" />
+          <img src="/assets/youtube.png" alt="YouTube" />
         </a>
       </div>
     </footer>

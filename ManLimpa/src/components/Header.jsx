@@ -1,18 +1,34 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Para navegação sem recarregar a página
-import '../styles/components/header.css'; // Seu CSS customizado
+import { Link, useLocation } from 'react-router-dom';
+import '../styles/components/header.css';
 
 const Header = () => {
+  const location = useLocation();
+  
+  // Verifica se o link corresponde à rota atual
+  const isActive = (path) => {
+    return location.pathname === path ? 'active' : '';
+  };
+
   return (
     <header className="header">
       <div className="logo">
         <Link to="/">LOGO - MANLIMPA</Link>
       </div>
+      
+      {/* Botão do menu mobile */}
+      <input type="checkbox" id="menu-toggle" className="menu-toggle" />
+      <label htmlFor="menu-toggle" className="menu-button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      
       <nav className="nav-links">
-        <Link to="/">GESTÃO DE RESÍDUOS</Link>
-        <Link to="/coleta">PONTOS DE COLETA</Link>
-        <Link to="/denuncia">DENÚNCIAS</Link>
-        <Link to="/educacao">EDUCAÇÃO</Link>
+        <Link to="/" className={isActive('/')}>GESTÃO DE RESÍDUOS</Link>
+        <Link to="/coleta" className={isActive('/coleta')}>PONTOS DE COLETA</Link>
+        <Link to="/denuncia" className={isActive('/denuncia')}>DENÚNCIAS</Link>
+        <Link to="/educacao" className={isActive('/educacao')}>EDUCAÇÃO</Link>
       </nav>
     </header>
   );
