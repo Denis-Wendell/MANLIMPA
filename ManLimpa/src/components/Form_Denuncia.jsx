@@ -88,7 +88,6 @@ const Form_Denuncia = () => {
       });
       
       // Exibir alerta
-      alert('Denúncia enviada com sucesso!');
     } catch (error) {
       console.error('Erro ao enviar denúncia:', error);
       
