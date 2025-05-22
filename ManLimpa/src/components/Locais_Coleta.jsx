@@ -45,7 +45,7 @@ const Locais_Coleta = () => {
             <li>• Verifique quais materiais são aceitos em cada ponto de coleta</li>
           </ul>
      
-          <h3>Pontos de Coleta:</h3>
+          <h3>Principais Pontos de Coleta:</h3>
             <ul>
                 {pontosColeta.map((ponto, index) => (
                     <li key={index}>

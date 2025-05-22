@@ -1,6 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
+import "../styles/components/Home.css";
+
 
 const images = [
   "/assets/1.png",
@@ -10,38 +12,34 @@ const images = [
 ];
 
 const infoCards = [
-
   /* Componente de informações */
-
   {
     title: "Ecopontos",
-    description: "Encontre pontos de coleta",
+    description: "Localize os pontos de coleta seletiva mais próximos de você em Manaus e contribua para um destino correto dos seus resíduos recicláveis",
+				link: "/coleta"
   },
   {
     title: "Central de Denúncias",
-    description: "Realize denúncias de descarte indevidos",
+    description: "Seja um guardião da sua cidade! Denuncie descartes irregulares de lixo, entulho e resíduos em locais inadequados. Juntos, construímos uma Manaus mais limpa.",
+				link: "/denuncia"
   },
   {
     title: "Conscientização",
-    description: "Saiba como e onde descartar seu lixo",
+    description: "Domine a arte da separação correta de lixo e entenda como papel, plástico, metal e vidro podem ter uma segunda vida através da reciclagem",
+				link: "/educacao"
   },
-  {
-    title: "Resíduos",
-    description: "Conheça o que pode ou não ser lixo",
-  },
-];
+  ];
 
 // Componente de Carrossel de Imagens
-
 const ImageCarousel = () => {
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 1500,
     arrows: false,
     responsive: [
       {
@@ -53,91 +51,56 @@ const ImageCarousel = () => {
     ],
   };
 
-// Configurações do carrossel
+  // Configurações do carrossel
   return (
-    <div className="max-w-[1000px] mx-auto px-4 py-6">
+    <div className="home-container">
       {/* Carrossel de Imagens */}
       <Slider {...settings}>
         {images.map((src, i) => (
-          <div key={i} className="px-2">
+          <div key={i} className="carousel-slide">
             <img
               src={src}
               alt={`Imagem ${i + 1}`}
-              className="w-full h-[200px] object-contain rounded-xl"
+              className="carousel-image"
             />
           </div>
         ))}
       </Slider>
 
-     <div
-  style={{
-    display: "flex",
-    justifyContent: "center",
-    gap: "180px",
-    marginTop: "5px",
-    flexWrap: "wrap",
-    padding: "10px 0 10px 10px",
-    backgroundColor: "#2e2e2e",
-    borderRadius: "10px",
-    color: "white",
-  }}
->
-  {/* Componente de Informações */}
+      {/* Componente de Informações */}
+      <div className="info-cards-container">
+							{infoCards.map((card, index) => (
+								<div key={index} className="info-card">
+									<Link to={card.link} className="info-link">{card.title}</Link>
+									<p className="info-description">
+										{card.description}
+									</p>
+									</div>
+									))}
+						</div>
+        
 
-  <div style={{ textAlign: "left", minWidth: "100px" }}>
-    <Link to="/coleta">ECOPONTOS</Link>
-    <p style={{ margin: "10px 0", fontSize: "14px" }}>
-      Encontre pontos de coleta
-    </p>
-  </div>
-
-  <div style={{ textAlign: "left", minWidth: "10px" }}>
-     <Link to="/denuncia">Denúncias</Link>
-    <p style={{ margin: "5px 0", fontSize: "14px" }}>
-      Realize denúncias de descarte indevidos
-    </p>
-  </div>
-
-  <div style={{ textAlign: "left", minWidth: "180px" }}>
-    <Link to="/educacao">Concientização</Link>
-    <p style={{ margin: "5px 0", fontSize: "14px" }}>
-      Saiba como e onde descartar seu lixo
-    </p>
-  </div>
-
-</div>
-
-{/* Componente de Impacto Ambiental */}
-
-  <div
-  style={{
-    marginTop: "20px",
-    padding: "20px",
-    backgroundColor: "#2e2e2e",
-    borderRadius: "10px",
-    color: "white",
-    textAlign: "center",
-  }}
->
-  <h2 style={{ fontSize: "30px", marginBottom: "1px", fontWeight: "bold" }}>
-    Impacto Positivo em Manaus 🌱
-  </h2>
-  <br />
-  <p style={{ fontSize: "16px", marginBottom: "10px" }}>
-    ♻️ Mais de <strong>1.200 toneladas</strong> de resíduos recicláveis coletados em 2024
-  </p>
-  <p style={{ fontSize: "16px", marginBottom: "10px" }}>
-    🌍 Redução estimada de <strong>3.500 toneladas de CO₂</strong> na atmosfera
-  </p>
-  <p style={{ fontSize: "16px", marginBottom: "10px" }}>
-    ♻️ Mais de <strong>1.000 toneladas</strong> de resíduos recicláveis coletados em 2023
-    💚 Mais de <strong>200 ecopontos</strong> ativos ajudando a construir uma cidade mais sustentável!
-  </p>
-</div>
-<br />
+      {/* Componente de Impacto Ambiental */}
+      <div className="impact-container">
+        <h2 className="impact-title">
+          Impacto Positivo em Manaus 🌱
+        </h2>
+        <br />
+        <p className="impact-stat">
+          ♻️ Mais de <strong>1.200 toneladas</strong> de resíduos recicláveis coletados em 2024
+        </p>
+        <p className="impact-stat">
+          🌍 Redução estimada de <strong>3.500 toneladas de CO₂</strong> na atmosfera
+        </p>
+        <p className="impact-stat">
+          ♻️ Mais de <strong>1.000 toneladas</strong> de resíduos recicláveis coletados em 2023
+        </p>
+        <p className="impact-stat">
+          💚 Mais de <strong>200 ecopontos</strong> ativos ajudando a construir uma cidade mais sustentável!
+        </p>
+      </div>
     </div>
   );
 };
 
 export default ImageCarousel;
-

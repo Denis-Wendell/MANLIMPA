@@ -193,20 +193,9 @@ const Form_Denuncia = () => {
                 <option value="Resíduos Agrícolas">Resíduos Agrícolas: Provenientes de atividades agrícolas, como restos de colheita. </option>  
               </select>
             </div>
+
             <div className="campo-grupo">
-              <label className="campo-label">Quantidade:</label>
-              <input
-                type="text"
-                name="quantidade"
-                value={formData.quantidade}
-                onChange={handleChange}
-                className="campo-input"
-                required
-                placeholder='Ex: 2kg, 3 sacos, etc.'
-              />
-            </div>
-            <div className="campo-grupo">
-              <label className="campo-label">Anexo:</label>
+              <label className="campo-label">Imagem da Denúncia:</label>
               <input
                 type="file"
                 name="anexo"
@@ -218,7 +207,7 @@ const Form_Denuncia = () => {
 
           {/* Descrição */}
           <div className="campo-grupo">
-            <label className="campo-label">Descrição:</label>
+            <label className="campo-label">Descrição da Denúncia:</label>
             <textarea
               name="descricao"
               value={formData.descricao}

@@ -16,7 +16,7 @@
 .banner {
   width: 100%;
   background-color: #fff;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
 }
 
 .banner-content {
@@ -63,7 +63,6 @@
   background-color: #fff;
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #000;
 }
 
