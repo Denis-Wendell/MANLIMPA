@@ -2,13 +2,11 @@
 .home-container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 24px 16px;
+  padding: 24px 10px;
 }
 
 /* Estilos do Carrossel */
-.carousel-slide {
-  padding: 0 8px;
-}
+
 
 .carousel-image {
   width: 100%;
