@@ -14,7 +14,7 @@ const Header = () => {
     <header className="header">
       <div className="logo">
         <img 
-          src="/logo.png" 
+          src="./logo.png" 
           alt="Logo do site" 
           className="logo-image"
           onError={(e) => {
