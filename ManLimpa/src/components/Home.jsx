@@ -15,7 +15,7 @@ const infoCards = [
   /* Componente de informações */
   {
     title: "Ecopontos",
-    description: "Localize os pontos de coleta seletiva mais próximos de você em Manaus e contribua para um destino correto dos seus resíduos recicláveis",
+    description: "Encontre os pontos de coleta seletiva mais próximos de você em Manaus e contribua para um destino correto dos seus resíduos recicláveis",
 				link: "/coleta"
   },
   {
