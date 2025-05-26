@@ -74,13 +74,9 @@ const MaterialLifecycle = () => {
       
       <div className="lifecycle-image-container">
         <img 
-          src="./assets/reciclavel.png"
+          src="/MaoClean/assets/reciclavel.png"  // Caminho absoluto com base
           alt="Símbolo de reciclagem em mãos" 
           className="lifecycle-image"
-          onError={(e) => {
-            console.log('Erro ao carregar imagem:', e.target.src);
-            // Opcional: definir uma imagem de fallback
-          }}
         />
       </div>
 
