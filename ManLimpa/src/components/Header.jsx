@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/components/Header.css';
+import logo from "../../public/assets/logo.png"; // Certifique-se de que o caminho está correto
 
 const Header = () => {
   const location = useLocation();
@@ -14,12 +15,9 @@ const Header = () => {
     <header className="header">
       <div className="logo">
         <img 
-          src="./logo.png" 
-          alt="Logo do site" 
-          className="logo-image"
-          onError={(e) => {
-            e.target.src = "../../assets/logo.png"; // Caminho alternativo para a imagem
-          }} />
+  src={logo}
+  alt="Logo do site" 
+  className="logo-image" />
         
       </div>
       
