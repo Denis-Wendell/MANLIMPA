@@ -74,11 +74,12 @@ const MaterialLifecycle = () => {
       
       <div className="lifecycle-image-container">
         <img 
-          src="/reciclavel.png" 
+          src="./assets/reciclavel.png"
           alt="Símbolo de reciclagem em mãos" 
           className="lifecycle-image"
           onError={(e) => {
-            e.target.src = "../../assets/reciclavel.png"; // Caminho alternativo para a imagem
+            console.log('Erro ao carregar imagem:', e.target.src);
+            // Opcional: definir uma imagem de fallback
           }}
         />
       </div>
