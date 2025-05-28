@@ -7,8 +7,11 @@ import "../styles/components/Home.css";
 const images = [
   "./assets/1.png",
   "./assets/2.png",
+  "./assets/3.jpg",
   "./assets/1.png",
   "./assets/2.png",
+  "./assets/3.jpg",
+ 
 ];
 
 const infoCards = [
@@ -39,7 +42,7 @@ const ImageCarousel = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1500,
+    autoplaySpeed: 2000,
     arrows: false,
     responsive: [
       {
@@ -54,6 +57,22 @@ const ImageCarousel = () => {
   // Configurações do carrossel
   return (
     <div className="home-container">
+      <div className="impact-container">
+        <h2 className="impact-title">
+          🌱<strong>MaoClean</strong>🎯
+        </h2>
+        <p className="impact-stat">
+          O <strong>MaoClean</strong> é uma 💻 solução digital, materializada como uma plataforma web interativa, criada com o propósito central de promover e facilitar a <strong>gestão sustentável de resíduos sólidos</strong> na cidade de <strong>Manaus</strong>. Sua finalidade é enfrentar o desafio do 🗑️ <strong>descarte inadequado</strong> e da baixa adesão às práticas de ♻️ reciclagem, atuando como um 🔗 <strong>elo</strong> entre os cidadãos, a informação e os recursos de coleta seletiva.
+        </p>
+        <p className="impact-stat">
+          O projeto busca ℹ️ <strong>democratizar o acesso a informações</strong> cruciais sobre a coleta seletiva, incentivar a 💚 <strong>conscientização ambiental</strong> e engajar a população em 👍 <strong>práticas de descarte mais responsáveis</strong>. Para os gestores, o <strong>MaoClean</strong> também se propõe a oferecer 🛠️ <strong>ferramentas</strong> que auxiliem no monitoramento e na otimização dos processos de coleta e gestão de resíduos.
+        </p>
+        <p className="impact-stat">
+          O objetivo final do <strong>MaoClean</strong> é contribuir significativamente para a construção de uma ✨ <strong>Manaus mais limpa, organizada e ambientalmente consciente</strong>. Ele representa uma iniciativa de 💡 <strong>inovação social</strong> que utiliza a tecnologia como ferramenta para fomentar o 🏙️ <strong>desenvolvimento sustentável urbano</strong>, a segurança dos dados e o 🤗 <strong>bem-estar da comunidade</strong>.
+        </p>
+      </div>
+
+
       {/* Carrossel de Imagens */}
       <Slider {...settings}>
         {images.map((src, i) => (
